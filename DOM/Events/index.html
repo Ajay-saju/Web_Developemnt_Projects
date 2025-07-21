@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color changing app</title>
+</head>
+<style>
+    /* Custom CSS for centering using Flexbox */
+    body {
+        
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+         min-height: 100vh;
+        padding: 20px;
+    }
+
+    /* Basic styling for the button */
+    button {
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+</style>
+
+<body>
+    <h1>Welcome !</h1>
+    <button>Click me</button>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

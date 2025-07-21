@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Pong</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="mainDiv">
+
+        <img src="images/1000_F_165931263_HQ20AIEvU2Uy1RiYQxdqTlrRW6NbYFNg.jpg" alt="Table Tennis " class="fit-Picture">
+
+        <div id="title">
+            <h4>Pin Pong Score Keeper</h4>
+        </div>
+
+        <div id="#oparation">
+            <h1><span id="p1ScoreDisplay">0</span> to <span id="p2ScoreDisplay">0</span></h1>
+            <p>Use the buttons below to keep score.</p>
+            <div>
+                <span>
+                    <label i>Playing to </label>
+                    <select name="winning score" id="selectWinningScore">
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </span>
+            </div>
+            <br>
+
+            <button type="button" id="p1Button">+1 Player 1</button>
+            <button type="button" id="p2Button">+1 Player 2</button>
+            <button type="button" id="reset">Reset</button>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

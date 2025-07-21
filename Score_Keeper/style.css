@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+#mainDiv {
+
+    width: 500px;
+
+
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* gap: 0; */
+}
+
+.fit-Picture {
+    width: 500px;
+    height: 300px;
+    display: block;
+}
+
+#title {
+
+    height: 50px;
+    background-color: rgb(246, 235, 235);
+    padding-left: 15px;
+    margin: 0;
+}
+
+#oparation {
+    display: flex;
+    flex-direction: column;
+}
+
+#selectWinningScore{
+    border-radius: 10px;
+}
+
+.winner{
+    color: green;
+}
+.looser{
+    color: red;
+}
