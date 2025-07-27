@@ -1,10 +1,32 @@
 
-localStorage.clear();
+// localStorage.clear();
 
 let myLeads = [];  // place to save input leads from input fields 
 
 
-let leadsToSave = []; 
+let savedLeads = [];
+
+const hasValue = localStorage.getItem("saveLeads");
+
+if (hasValue !== null) {
+    showSavedLeads()
+    
+}
+
+
+
+
+function showSavedLeads() {
+    const savedLeadsJson = localStorage.getItem("saveLeads");
+    savedLeads = JSON.parse(savedLeadsJson);
+
+    for (let i = 0; i < savedLeads.length; i++) {
+        console.log(savedLeads[i] + " log from showSavedLeads ");
+        myLeads.push(savedLeads[i]);
+    }
+    // renderLeads()
+
+}
 
 
 const saveButton = document.querySelector("#input-btn")
@@ -15,43 +37,15 @@ const ulEl = document.querySelector("#ul-el")
 
 saveButton.addEventListener('click', function () {
 
+    console.log("click working ")
+
     myLeads.push(inputEl.value);
     inputEl.value = ""
     renderLeads();
+    saveMyLeads();
 
 
 })
-
-storeInLocal();
-
-
-function storeInLocal() {
-
-    myLeads.forEach(item => {
-
-        leadsToSave.push(item);
-
-    })
-    let jasonLeads = JSON.stringify(myLeads);
-    localStorage.setItem("prevLeads", jasonLeads);
-
-}
-
-
-
-if (localStorage.length > 0) {
-    showPrevLeads()
-    // localStorage.clear();
-}
-
-
-function showPrevLeads() {
-    const prevLeads = localStorage.getItem("prevLeads");
-
-    for (let lead in prevLeads) {
-        console.log(lead);
-    }
-}
 
 
 let count = 0;
@@ -68,10 +62,30 @@ function renderLeads() {
         li.appendChild(a);
         ulEl.appendChild(li)
         count++;
+        console.log("renderLeads working ")
 
     }
 
 }
+
+// save all leads to local 
+
+
+function saveMyLeads() {
+
+    const uniqueLeads = [...new Set(myLeads)];
+    const stringifyLeads = JSON.stringify(uniqueLeads);
+    localStorage.setItem("saveLeads", stringifyLeads);
+
+
+    console.log(localStorage.getItem("saveLeads" + " from saveMyLeads "))
+
+
+
+
+
+}
+
 
 
 
