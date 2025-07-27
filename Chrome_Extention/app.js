@@ -6,49 +6,27 @@ let myLeads = [];  // place to save input leads from input fields
 
 let savedLeads = [];
 
-const hasValue = localStorage.getItem("saveLeads");
-
-if (hasValue !== null) {
-    showSavedLeads()
-    
-}
-
-
-
-
-function showSavedLeads() {
-    const savedLeadsJson = localStorage.getItem("saveLeads");
-    savedLeads = JSON.parse(savedLeadsJson);
-
-    for (let i = 0; i < savedLeads.length; i++) {
-        console.log(savedLeads[i] + " log from showSavedLeads ");
-        myLeads.push(savedLeads[i]);
-    }
-    // renderLeads()
-
-}
-
+let count = 0;
 
 const saveButton = document.querySelector("#input-btn")
 const inputEl = document.querySelector("#input-el")
 const ulEl = document.querySelector("#ul-el")
 
 
+if (localStorage.getItem("saveLeads")) {
+    showSavedLeads() 
+}
 
-saveButton.addEventListener('click', function () {
+function showSavedLeads() {
+    console.log("show saved leads working")
+    const savedLeadsJson = localStorage.getItem("saveLeads");
+    savedLeads = JSON.parse(savedLeadsJson);
 
-    console.log("click working ")
+    myLeads = savedLeads
+    renderLeads()
 
-    myLeads.push(inputEl.value);
-    inputEl.value = ""
-    renderLeads();
-    saveMyLeads();
+}
 
-
-})
-
-
-let count = 0;
 
 function renderLeads() {
 
@@ -62,29 +40,22 @@ function renderLeads() {
         li.appendChild(a);
         ulEl.appendChild(li)
         count++;
-        console.log("renderLeads working ")
-
     }
 
 }
 
-// save all leads to local 
 
-
-function saveMyLeads() {
-
-    const uniqueLeads = [...new Set(myLeads)];
-    const stringifyLeads = JSON.stringify(uniqueLeads);
-    localStorage.setItem("saveLeads", stringifyLeads);
-
-
-    console.log(localStorage.getItem("saveLeads" + " from saveMyLeads "))
+saveButton.addEventListener('click', function () {
 
 
 
+    myLeads.push(inputEl.value);
+    inputEl.value = ""
+    localStorage.setItem("saveLeads", JSON.stringify(myLeads))
+    renderLeads();
 
 
-}
+})
 
 
 
