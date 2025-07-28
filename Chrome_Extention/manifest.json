@@ -2,6 +2,10 @@
     "manifest_version": 3,
     "version": "1.0",
     "name": "leads tracker",
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ],
     "action": {
         "default_popup": "index.html",
         "default_icon": "rupee.png"
