@@ -15,7 +15,7 @@ if (localStorage.getItem("saveLeads")) {
     showSavedLeads()
 }
 
-const tab = [{ url: "www.google.com" }]
+
 
 saveTabBtn.addEventListener("click", function () {
 
