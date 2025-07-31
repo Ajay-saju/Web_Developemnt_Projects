@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <section class="landing-section">
+            <div class="start-qiuz">
+                <h1>Quiz Time!</h1>
+                <p>Test your knowledge with these fun quesions</p>
+                <button id="start-btn">Start Quiz</button>
+            </div>
+
+        </section>
+
+        <section class="question-bord">
+            <div id="question-screen">
+                <h2 id="quesions">Quistions goes here </h2>
+                <div class="quiz-info">
+                    <p>Question <span id="current-question">1</span>of <span id="total-question">5</span></p>
+                    <p>score : <span id="score">0</span></p>
+                </div>
+                <div class="options-container" id="options-container">
+
+                    <!-- answers will be updated from js after some time  -->
+
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="result">
+            <div class="result-screen">
+                <h1>Quiz Result</h1>
+                <div id="final-result-container">
+                    <p>You scored <span id="total-score">0</span>out of <span id="total-questons">5</span></p>
+                    <h1 id="result-comments">Keep trying</h1>
+                </div>
+                <button id="reset-quiz">Reset Quiz</button>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
