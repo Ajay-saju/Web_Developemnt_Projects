@@ -54,12 +54,35 @@ body {
 
 
 .quiz-header {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
-#question-text{
+#question-text {
     color: #333;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     line-height: 1.4;
+}
+
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.answers-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.answers-btn{
+    background-color: #f8f0e5;
+    color: #333;
+    text-align: left;
+    border-radius: 2px solid #eadbc8;
+    padding: 1rem;
+    cursor: pointer;
 }
